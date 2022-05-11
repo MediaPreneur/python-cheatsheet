@@ -2,10 +2,9 @@
 
 def convert_table(lines):
     def from_ascii():
-        out = []
         first, header, third, *body, last = lines
         first = first.translate(str.maketrans({'-': '━', '+': '┯'}))
-        out.append(f'┏{first[1:-1]}┓')
+        out = [f'┏{first[1:-1]}┓']
         header = header.translate(str.maketrans({'|': '│'}))
         out.append(f'┃{header[1:-1]}┃')
         third = third.translate(str.maketrans({'-': '─', '+': '┼'}))
